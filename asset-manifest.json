@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/frontend/static/css/main.f2c90478.css",
+    "main.js": "/frontend/static/js/main.02bc6817.js",
+    "static/media/bg-photo.png": "/frontend/static/media/bg-photo.71659c74de0b55202c83.png",
+    "static/media/Nunito-Medium.ttf": "/frontend/static/media/Nunito-Medium.06740446a9f13288701b.ttf",
+    "static/media/Nunito-Bold.ttf": "/frontend/static/media/Nunito-Bold.275dd55e10ba966bcb9b.ttf",
+    "static/media/NunitoSans-Regular.ttf": "/frontend/static/media/NunitoSans-Regular.7a5b1e324beb1081259a.ttf",
+    "static/media/NunitoSans-SemiBold.ttf": "/frontend/static/media/NunitoSans-SemiBold.39af491f33e04d1f69b6.ttf",
+    "static/media/NunitoSans-Bold.ttf": "/frontend/static/media/NunitoSans-Bold.e43c5a897c0189a89b62.ttf",
+    "static/media/icon_google.svg": "/frontend/static/media/icon_google.f64797c558289b99101268c7352218d9.svg",
+    "static/media/phone-2.png": "/frontend/static/media/phone-2.4e7ce452e0a78d6c2a4a.png",
+    "static/media/Futura.ttf": "/frontend/static/media/Futura.8baf55eaf7730ecd52cf.ttf",
+    "static/media/phone-3.png": "/frontend/static/media/phone-3.73feb5d6af1c140b721d.png",
+    "static/media/phone-4.png": "/frontend/static/media/phone-4.650ecf2ed01055080f5f.png",
+    "static/media/phone-5.png": "/frontend/static/media/phone-5.b1b0e12e9ad5ebebaff6.png",
+    "static/media/phone-1.png": "/frontend/static/media/phone-1.2e5d5cbc7aaa8a9c1ca3.png",
+    "static/media/photo-10.png": "/frontend/static/media/photo-10.efa3242ffc8b222f449c.png",
+    "static/media/photo-1.png": "/frontend/static/media/photo-1.7c241a6929c54207d2f1.png",
+    "static/media/photo-5.png": "/frontend/static/media/photo-5.527def6ab05f413bfda9.png",
+    "static/media/photo-3.png": "/frontend/static/media/photo-3.cb5da57e8ec1b2da346f.png",
+    "static/media/photo-8.png": "/frontend/static/media/photo-8.de61407bb979e65b693b.png",
+    "static/media/photo-9.png": "/frontend/static/media/photo-9.44b69a78a32e9d912313.png",
+    "static/media/photo-2.png": "/frontend/static/media/photo-2.37cd6fa96b2849ec0ccc.png",
+    "static/media/photo-4.png": "/frontend/static/media/photo-4.066fb504d166b3888806.png",
+    "static/media/photo-7.png": "/frontend/static/media/photo-7.41f2662527b929be2a5a.png",
+    "static/media/photo-6.png": "/frontend/static/media/photo-6.05160e526fc47075e854.png",
+    "static/media/logo.svg": "/frontend/static/media/logo.3d97ed96701fdfc4fe943ed8d2cbe9e1.svg",
+    "static/media/icon_linkedin.svg": "/frontend/static/media/icon_linkedin.a0ccf26df409eb03ec53e4c72d8720bc.svg",
+    "static/media/icon_facebook.svg": "/frontend/static/media/icon_facebook.d5b953e7d9118af2a99bf959e8519a71.svg",
+    "index.html": "/frontend/index.html",
+    "static/media/icon-upload.svg": "/frontend/static/media/icon-upload.49c05cee9d578e728b68f14079a0f6d8.svg",
+    "main.f2c90478.css.map": "/frontend/static/css/main.f2c90478.css.map",
+    "main.02bc6817.js.map": "/frontend/static/js/main.02bc6817.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2c90478.css",
+    "static/js/main.02bc6817.js"
+  ]
+}
