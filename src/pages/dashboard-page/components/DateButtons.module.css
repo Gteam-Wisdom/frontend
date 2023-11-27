@@ -1,7 +1,7 @@
 .button {
-  min-width: 80px;
+  /* width: 80px; */
   height: 28px;
-  padding: 24px, 24px, 24px, 24px;
+  padding: 4px 12px 4px 12px;
   border-radius: 48px;
   border: 1px;
   gap: 4px;
@@ -12,8 +12,11 @@
   justify-content: center;
   align-items: center;
   color: #B3B1C9;
+  cursor: pointer;
 }
 
-.active {
-
+.button:hover, .active {
+  color: #64108F;
+  border-color: #64108F;
 }
+
