@@ -52,7 +52,7 @@ const Stack: React.FC<StackProps> = ({
 
 Stack.defaultProps = {
   direction: "column",
-  spacing: 2,
+  spacing: 0,
   align: "stretch",
   justify: "flex-start",
 };

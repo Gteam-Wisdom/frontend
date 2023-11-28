@@ -3,6 +3,8 @@ import * as React from "react";
 import styles from "./Input.module.css";
 import OpenEye from "./assets/open-eye.svg";
 import ClosedEye from "./assets/closed-eye.svg";
+import Find from "./assets/find.svg";
+import Geo from "./assets/geo.svg";
 
 interface InputComponentProps {
   className?: string;
@@ -21,6 +23,7 @@ interface InputComponentProps {
   showPasswordToggle?: boolean;
   value?: string;
   container?: React.CSSProperties;
+  isLocation?: boolean;
 }
 
 const Input: React.FC<InputComponentProps> = ({
@@ -39,6 +42,7 @@ const Input: React.FC<InputComponentProps> = ({
   type,
   showPasswordToggle,
   value,
+  isLocation,
   container,
 }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -89,6 +93,7 @@ const Input: React.FC<InputComponentProps> = ({
         />
       ) : showPasswordToggle ? (
         <div className={styles.passwordContainer}>
+          <img src={OpenEye} alt="hide" />
           <input
             required
             ref={inputRef}
@@ -98,7 +103,7 @@ const Input: React.FC<InputComponentProps> = ({
               errors && required ? styles.errorInput : ""
             }`}
             tabIndex={0}
-            type={isPasswordVisible ? "text" : "password"}
+            type={type}
             name={name}
             onChange={onChange}
             placeholder={placeholder}
@@ -120,6 +125,35 @@ const Input: React.FC<InputComponentProps> = ({
               )}
             </button>
           )}
+        </div>
+      ) : isLocation ? (
+        <div className={styles.passwordContainer}>
+          <button type="button" className={styles.findButton}>
+            <img src={Find} alt="hide" />
+          </button>
+          <input
+            required
+            ref={inputRef}
+            aria-label={name}
+            data-testid={name}
+            className={`${className} ${
+              errors && required
+                ? (styles.errorInput, styles.input)
+                : styles.input
+            }`}
+            tabIndex={0}
+            type={"text"}
+            name={name}
+            onChange={onChange}
+            placeholder={placeholder}
+            value={value}
+            style={inputStyle}
+            disabled={disabled}
+            readOnly={readOnly}
+          />
+          <button type="button" className={styles.passwordToggle}>
+            <img src={Geo} alt="Geo" />
+          </button>
         </div>
       ) : (
         <input
