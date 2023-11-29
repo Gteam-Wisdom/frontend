@@ -24,6 +24,7 @@ interface InputComponentProps {
   value?: string;
   container?: React.CSSProperties;
   isLocation?: boolean;
+  isFind?: boolean;
 }
 
 const Input: React.FC<InputComponentProps> = ({
@@ -44,6 +45,7 @@ const Input: React.FC<InputComponentProps> = ({
   value,
   isLocation,
   container,
+  isFind,
 }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -154,6 +156,32 @@ const Input: React.FC<InputComponentProps> = ({
           <button type="button" className={styles.passwordToggle}>
             <img src={Geo} alt="Geo" />
           </button>
+        </div>
+      ) : isFind ? (
+        <div className={styles.passwordContainer}>
+          <button type="button" className={styles.findButton}>
+            <img src={Find} alt="hide" />
+          </button>
+          <input
+            required
+            ref={inputRef}
+            aria-label={name}
+            data-testid={name}
+            className={`${className} ${
+              errors && required
+                ? (styles.errorInput, styles.input)
+                : styles.input
+            }`}
+            tabIndex={0}
+            type={"text"}
+            name={name}
+            onChange={onChange}
+            placeholder={placeholder}
+            value={value}
+            style={inputStyle}
+            disabled={disabled}
+            readOnly={readOnly}
+          />
         </div>
       ) : (
         <input

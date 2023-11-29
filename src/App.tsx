@@ -21,9 +21,8 @@ import LearnerOnboardingPage from "./pages/learner-onboarding-page/LearnerOnboar
 import LoginView from "./pages/LoginView";
 import LoginWrapper from "./pages/LoginWrapper/LoginWrapper";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import Wisdom from "./pages/wisdom/Wisdom";
 
 function App() {
   return (
@@ -54,6 +53,7 @@ function App() {
             <Route path="community" element={<Community />} />
             <Route path="profile" element={<Profile />} />
             <Route path="help" element={<Help />} />
+            <Route path="wisdom" element={<Wisdom />} />
           </Route>
         </Routes>
       </BrowserRouter>
