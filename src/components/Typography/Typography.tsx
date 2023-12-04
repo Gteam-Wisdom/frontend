@@ -1,11 +1,14 @@
-// CustomTypography.tsx
-
-import { CSSProperties, FunctionComponent, PropsWithChildren } from "react";
+import React, {
+  CSSProperties,
+  FunctionComponent,
+  PropsWithChildren,
+} from "react";
 
 interface CustomTypographyProps extends PropsWithChildren {
-  variant?: "h1" | "h2" | "h3" | "body1" | "body2";
+  variant?: "h1" | "h2" | "h3" | "body1" | "body2" | "secondary";
   className?: string;
   sx?: CSSProperties;
+  bold?: boolean;
 }
 
 const Typography: FunctionComponent<CustomTypographyProps> = ({
@@ -13,9 +16,18 @@ const Typography: FunctionComponent<CustomTypographyProps> = ({
   children,
   className,
   sx,
+  bold,
   ...restOfProps
 }) => {
   let Tag: keyof JSX.IntrinsicElements = "p";
+  let defaultStyle: CSSProperties = {
+    fontSize: variant === "body2" ? "14px" : "16px",
+    fontStyle: "normal",
+    fontWeight: bold ? 600 : 400,
+    lineHeight: variant === "body2" ? "20px" : "26px",
+    textAlign: "center",
+    color: variant === "secondary" ? "#6B6985" : "#321841",
+  };
 
   switch (variant) {
     case "h1":
@@ -33,12 +45,19 @@ const Typography: FunctionComponent<CustomTypographyProps> = ({
     case "body2":
       Tag = "p";
       break;
+    case "secondary":
+      Tag = "p";
+      break;
     default:
       Tag = "p";
   }
 
   return (
-    <Tag className={className} style={sx} {...restOfProps}>
+    <Tag
+      style={{ ...defaultStyle, ...sx }}
+      className={className}
+      {...restOfProps}
+    >
       {children}
     </Tag>
   );

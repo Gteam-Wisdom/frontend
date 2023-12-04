@@ -18,19 +18,23 @@ import LearnerVerifyEmailPage from "./pages/learner-verify-email-page/LearnerVer
 import LearnerEmailVerificationPage from "./pages/learner-email-verification-page/LearnerEmailVerificationPage";
 import LearnerCongratsPage from "./pages/learner-congrats-page/LearnerCongratsPage";
 import LearnerOnboardingPage from "./pages/learner-onboarding-page/LearnerOnboardingPage";
-import LoginView from "./pages/LoginView";
 import LoginWrapper from "./pages/LoginWrapper/LoginWrapper";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Wisdom from "./pages/wisdom/Wisdom";
+import Dev from "./pages/dev/Dev";
+import CollectionView from "./pages/wisdom/CollectionView";
+import ExpertView from "./pages/expert/ExpertView";
+import Table from "./pages/wisdom/components/Table";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="dev" element={<Dev />} />
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginWrapper />}></Route>
+          <Route path="/login" element={<LoginWrapper />} />
 
           <Route path="/become-a-learner" element={<BecomeALearner />}>
             <Route path="welcome" element={<WelcomePage />} />
@@ -45,6 +49,13 @@ function App() {
             <Route path="congrats" element={<LearnerCongratsPage />} />
             <Route path="onboarding" element={<LearnerOnboardingPage />} />
           </Route>
+          <Route path="/expert" element={<ExpertView />}>
+            <Route path="wisdom" element={<Wisdom />}></Route>
+            <Route
+              path="default_collection"
+              element={<CollectionView />}
+            ></Route>
+          </Route>
           <Route path="/become-an-expert/*" element={<BecomeAnExpert />} />
           <Route path="/learner" element={<Learner />}>
             <Route index path="home" element={<HomePage />} />
@@ -53,7 +64,7 @@ function App() {
             <Route path="community" element={<Community />} />
             <Route path="profile" element={<Profile />} />
             <Route path="help" element={<Help />} />
-            <Route path="wisdom" element={<Wisdom />} />
+            <Route path="default_collection" element={<CollectionView />} />
           </Route>
         </Routes>
       </BrowserRouter>

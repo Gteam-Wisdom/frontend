@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 1.5em 0;
+    margin: 10px 0;
     border: 0;
 }
 
@@ -12,19 +12,23 @@
     width: 100%;
 }
 
-input,
+.input,
 textarea {
-    padding-left: 50px;
+    padding: 3px;
     font-size: 16px;
     font-weight: 400;
     width: 100%;
     color: #344054;
     background: #ffffff;
-    border: 1px solid #D9D9EB;
+    border: 1px solid rgba(179, 177, 201, 1);
     border-radius: 12px;
     min-height: 3em;
     margin: 0.5em 0;
     font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+}
+
+.inputIcon{
+    padding-left: 50px;
 }
 
 input:focus,

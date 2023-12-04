@@ -1,0 +1,12 @@
+.wrapper{
+    width: 600px;
+    gap: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.actionsWrapper{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}

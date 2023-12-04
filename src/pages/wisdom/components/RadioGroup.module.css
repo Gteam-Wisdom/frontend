@@ -1,0 +1,50 @@
+.radioWrapper{
+    display: flex;
+    gap: 10px;
+    padding-top: 5px;
+    flex-direction: column;
+}
+.inputWrapper{
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+ .radio {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    appearance: none;
+    border: 2px solid #64108F;
+    border-radius: 50%;
+    outline: none;
+  }
+  .radio:checked {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    appearance: none;
+    border: 2px solid #64108F;
+    border-radius: 50%;
+    outline: none;
+  }
+  
+  .radio::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #64108F;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hide the small circle */
+  }
+  
+  .radio:checked::before {
+    display: block; /* Show the small circle when the radio is checked */
+  }
+  

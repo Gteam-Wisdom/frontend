@@ -52,6 +52,8 @@ const Add: FunctionComponent = () => {
       const blob = new Blob([uint8Array], { type: files[0].type });
 
       // Append the Blob to the formData with the key "files"
+      formData.append("tags", "hello");
+      formData.append("status", "In progress");
       formData.append("files", blob, files[0].name);
       await axios.post(
         "https://wisdocity-dev.mydbsync.com/collections/upload-files/test_user",
@@ -74,7 +76,7 @@ const Add: FunctionComponent = () => {
       <Modal
         show={isModalOpen}
         onHide={closeModal}
-        contentLabel="Upload Dialog"
+        aria-labelledby="Upload Files"
         contentClassName={styles.dialog}
       >
         <div className={styles.border}>

@@ -1,69 +1,53 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Pagination } from "react-bootstrap";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import styles from "../Wisdom.module.css";
 import RenderItemOnStatus from "./RenderItemOnStatus";
 import Input from "../../../components/input/Input";
 import Sort from "./Sort";
 import Stack from "../../../components/Stack";
-import Typography from "../../../components/Typography";
 import Add from "./Add";
+import { CollectionItem } from "../utils/collection";
 
-interface CollectionItem {
-  file_name: string;
-  file_type: string;
-  date_created: string;
-  status: string;
-  tags: string;
-}
+const findFiles = (searchString: string, data: CollectionItem[]) => {
+  return data.filter(
+    (e) => e.tags.includes(searchString) || e.file_name.includes(searchString)
+  );
+};
 
-interface WisdomResponse {
-  data: CollectionItem[];
-  message: string;
-  totalCount: number;
-  totalPages: number;
-}
-
-const WisdomTable: React.FC = () => {
-  const [wisdomData, setWisdomData] = useState<WisdomResponse | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+const WisdomTable: FunctionComponent<{ data: CollectionItem[] }> = ({
+  data,
+}) => {
+  const [wisdomData, setWisdomData] = useState<CollectionItem[]>(data);
+  const [findString, setFindString] = useState<string>("");
+  const [sortColumn, setSortColumn] = useState<string>("");
 
   useEffect(() => {
-    fetchData();
-  }, [currentPage]); // Fetch data whenever the currentPage changes
+    let sortedData = [...data];
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.post<WisdomResponse>(
-        "https://wisdocity-dev.mydbsync.com/collections/get-files-list/test_user",
-        {
-          orderBy: "date_created",
-          isDescending: true,
-          rowPerPage: itemsPerPage,
-          pageNumber: currentPage,
-        }
+    if (sortColumn) {
+      sortedData = sortedData.sort((a, b) =>
+        (a[sortColumn as keyof CollectionItem] as string).localeCompare(
+          b[sortColumn as keyof CollectionItem] as string
+        )
       );
-
-      setWisdomData(response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
     }
-  };
+    const filteredData = findFiles(findString, sortedData);
+    setWisdomData(filteredData);
+  }, [sortColumn, findString, data]);
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFindString(e.target.value);
+    },
+    []
+  );
 
-  const getLastIndex = () => {
-    return currentPage * itemsPerPage;
-  };
+  const handleSort = useCallback((column: string) => {
+    setSortColumn(column);
+  }, []);
 
-  const getFirstIndex = () => {
-    return getLastIndex() - itemsPerPage;
-  };
-
-  const currentItems = wisdomData?.data.slice(getFirstIndex(), getLastIndex());
+  useEffect(() => {
+    setWisdomData(data);
+  }, [data]);
 
   return (
     <div className={styles.tableWrapper}>
@@ -79,8 +63,9 @@ const WisdomTable: React.FC = () => {
               width: "250px",
             }}
             placeholder="Search by name or tags"
+            onChange={handleInputChange}
           ></Input>
-          <Sort></Sort>
+          <Sort onSort={handleSort} />
         </Stack>
         <Stack
           direction="row"
@@ -103,7 +88,7 @@ const WisdomTable: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {wisdomData?.data.map((item) => (
+            {wisdomData.map((item) => (
               <tr className={styles.tr} key={item.file_name}>
                 <td>
                   <div>
@@ -134,22 +119,6 @@ const WisdomTable: React.FC = () => {
           </tbody>
         </table>
       </div>
-
-      {/* {wisdomData && (
-        <Pagination>
-          {[...Array(Math.ceil(wisdomData.totalCount / itemsPerPage))].map(
-            (_, index) => (
-              <Pagination.Item
-                key={index + 1}
-                active={index + 1 === currentPage}
-                onClick={() => handlePageChange(index + 1)}
-              >
-                {index + 1}
-              </Pagination.Item>
-            )
-          )}
-        </Pagination>
-      )} */}
     </div>
   );
 };

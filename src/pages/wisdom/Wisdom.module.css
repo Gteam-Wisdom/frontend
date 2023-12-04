@@ -39,7 +39,7 @@
 
 .table > tbody > tr:nth-child(odd),
 .table > tbody > tr:nth-child(even) {
-    height: 80px;
+    height: 60px;
     width: 100%;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .table > tbody > tr:nth-child(even) {
-    background: rgba(250, 247, 252, 1);
+    background: #faf7fc;
 }
 
 .table > tbody > tr > td:first-child {
@@ -108,8 +108,8 @@
 
 .input {
     margin-right: 10px;
-    height: 20px;
-    width: 20px;
+    height: 13px;
+    width: 13px;
 }
 
 .tag {
@@ -129,4 +129,10 @@
     padding: 10px;
     align-items: center;
     justify-content: space-between;
+}
+
+.pagination{
+    background-color: none;
+    border: none;
+    color: #6b6985;
 }

@@ -1,67 +1,64 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import WisdomTable from "./components/Table";
 import styles from "./Wisdom.module.css";
+import NavBar from "./components/NavBar";
+import Collection from "./components/Collection";
+import axios from "axios";
+import { CollectionItem, CollectionsList } from "./utils/collection";
+import { Outlet } from "react-router";
+import { useHeaderText } from "../expert/Layout/HeaderContext";
 
-// Define TypeScript types
-interface CollectionItem {
-  collection_name: string;
-  collection_path: string;
-  date_created: string;
-  file_name: string;
-  file_path: string;
-  file_type: string;
-  status: string;
-  tags: string;
-  user_id: string;
-}
+const Wisdom = () => {
+  const [page, setPage] = useState("1");
+  const [files, setFiles] = useState<CollectionItem[]>([]);
+  const [collections, setCollections] = useState<CollectionsList[]>([]);
+  const { setHeaderText } = useHeaderText();
+  setHeaderText("Wisdom");
 
-interface WisdomResponse {
-  data: CollectionItem[];
-  message: string;
-  totalCount: number;
-  totalPages: number;
-}
+  const pageClickHandle = useCallback((pageNum: string) => {
+    setPage(pageNum);
+  }, []);
 
-interface WisdomProps {
-  // Add any additional props if needed
-}
-
-const Wisdom: React.FC<WisdomProps> = () => {
-  //   const [setWisdomData] = useState<WisdomResponse | null>(null);
-
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         // Use axios.post and provide the data in the 'data' property
-  //         const response = await axios.post<WisdomResponse>(
-  //           "https://wisdocity-dev.mydbsync.com/collections/get-collection-list/test_user",
-  // //           {
-  // //             orderBy: "date_created",
-  // //             isDescending: true,
-  // //             rowPerPage: 10,
-  // //             pageNumber: 1,
-  // //           }
-  // //         );
-
-  // //         // Set the data in the state
-  // //         setWisdomData(response.data);
-  // //       } catch (error) {
-  // //         // Handle errors here
-  // //         console.error("Error fetching data:", error);
-  // //       }
-  // //     };
-
-  //     fetchData(); // Call the fetchData function
-
-  //     // Add axios to the dependency array if you use it directly in the useEffect
-  //   }, []); // Empty dependency array means this effect runs once after the initial render
-
-  //   // You can now use the 'wisdomData' state in your component
+  useEffect(() => {
+    const getFiles = async () => {
+      try {
+        const response = await axios.post(
+          "https://wisdocity-dev.mydbsync.com/collections/get-files-list/test_user",
+          {
+            orderBy: "date_created",
+            isDescending: true,
+            rowPerPage: 10,
+            pageNumber: 1,
+          }
+        );
+        setFiles(response.data.data);
+      } catch (error) {
+        console.error("Error fetching files:", error);
+      }
+    };
+    const getCollections = async () => {
+      try {
+        const response = await axios.get(
+          "https://wisdocity-dev.mydbsync.com/collections/get-collections-list/test_user"
+        );
+        setCollections(response.data.data);
+      } catch (error) {
+        console.error("Error fetching files:", error);
+      }
+    };
+    getFiles();
+    getCollections();
+  }, [page]);
 
   return (
     <div className={styles.wrapper}>
-      <WisdomTable></WisdomTable>
+      <NavBar pageClickHandle={pageClickHandle} />
+      {page === "1" && <Outlet /> ? (
+        <WisdomTable data={files}></WisdomTable>
+      ) : (
+        <Collection collections={collections}></Collection>
+      )}
+      <Outlet />
     </div>
   );
 };

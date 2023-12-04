@@ -1,7 +1,16 @@
+import React, { FunctionComponent } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "./Sort.module.css";
 
-const Sort = () => {
+interface SortProps {
+  onSort: (column: string) => void;
+}
+
+const Sort: FunctionComponent<SortProps> = ({ onSort }) => {
+  const handleSort = (column: string) => {
+    onSort(column);
+  };
+
   return (
     <Dropdown className={styles.wrapper}>
       <Dropdown.Toggle
@@ -13,9 +22,19 @@ const Sort = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Option 1</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Option 2</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Option 3</Dropdown.Item>
+        <Dropdown.Item onClick={() => handleSort("file_name")}>
+          File Name
+        </Dropdown.Item>
+        <Dropdown.Item onClick={() => handleSort("file_type")}>
+          File Type
+        </Dropdown.Item>
+        <Dropdown.Item onClick={() => handleSort("date_created")}>
+          Date Created
+        </Dropdown.Item>
+        <Dropdown.Item onClick={() => handleSort("status")}>
+          Status
+        </Dropdown.Item>
+        {/* Add more columns as needed */}
       </Dropdown.Menu>
     </Dropdown>
   );

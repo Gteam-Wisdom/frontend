@@ -4,6 +4,7 @@
     color: rgba(107, 105, 133, 1);
     border-radius: 12px;
     font-size: 14px;
+    padding: 13px;
 }
 
 .button:hover{
@@ -12,9 +13,14 @@
     color: rgba(107, 105, 133, 1);
 }
 
-.wrapper{
-    height: fit-content;
+.wrapper:focus{
+    background: white;
 }
+
+.wrapper:checked{
+    background: white;
+}
+
 .button:focus{
     border: 1px solid rgba(179, 177, 201, 1);
     background: white;
@@ -25,3 +31,4 @@
     background: white;
     color: rgba(107, 105, 133, 1);
 }
+

@@ -1,0 +1,68 @@
+.dropzone {
+    display: flex;
+    padding: 24px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+    width: 100%;
+    height: fit-content;
+
+    border-radius: 16px;
+    border: 1.5px dashed #B3B1C9;
+    background: #FCFCFD;
+}
+
+.dropzoneWrapper{
+    width: 100%;
+    height: fit-content;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.upload{
+    padding: 12px;
+    border-radius: 4px;
+    border: 1.5px dashed var(--Blue, #006BC5);
+}
+.file{
+    display: flex;
+    position: relative;
+    height: 50px;
+    padding: 20px 35px;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 4px;
+    border: 1px solid #F1F0F7;
+    background: #FFF;
+    box-shadow: 2px 2px 15px 0px rgba(153, 153, 169, 0.15);
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.delete{
+    transform: rotate(45deg);
+}
+
+.filesWrapper{
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.button{
+    display: flex;
+    width: 90px;
+    height: 48px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--Accent-Purple, #64108F);
+}

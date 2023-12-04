@@ -14,6 +14,9 @@ const RenderItemOnStatus: FunctionComponent<Props> = ({ status }) => {
     case "Done":
       circleColor = "blue";
       break;
+    case "Failed":
+      circleColor = "red";
+      break;
     case "In Progress":
       circleColor = "yellow";
       break;

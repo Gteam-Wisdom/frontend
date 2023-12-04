@@ -1,10 +1,9 @@
-import * as React from "react";
-
 import styles from "./Input.module.css";
 import OpenEye from "./assets/open-eye.svg";
 import ClosedEye from "./assets/closed-eye.svg";
 import Find from "./assets/find.svg";
 import Geo from "./assets/geo.svg";
+import { FunctionComponent, useRef, useState } from "react";
 
 interface InputComponentProps {
   className?: string;
@@ -27,7 +26,7 @@ interface InputComponentProps {
   isFind?: boolean;
 }
 
-const Input: React.FC<InputComponentProps> = ({
+const Input: FunctionComponent<InputComponentProps> = ({
   className,
   errors,
   label,
@@ -47,12 +46,12 @@ const Input: React.FC<InputComponentProps> = ({
   container,
   isFind,
 }) => {
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleClick = () => {
     if (inputRef && inputRef.current) inputRef.current.focus();
   };
-  const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleTogglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -101,7 +100,7 @@ const Input: React.FC<InputComponentProps> = ({
             ref={inputRef}
             aria-label={name}
             data-testid={name}
-            className={`${className} ${
+            className={`${className} ${styles.input} ${
               errors && required ? styles.errorInput : ""
             }`}
             tabIndex={0}
@@ -138,7 +137,7 @@ const Input: React.FC<InputComponentProps> = ({
             ref={inputRef}
             aria-label={name}
             data-testid={name}
-            className={`${className} ${
+            className={`${className} ${styles.inputIcon} ${styles.input}  ${
               errors && required
                 ? (styles.errorInput, styles.input)
                 : styles.input
@@ -167,7 +166,7 @@ const Input: React.FC<InputComponentProps> = ({
             ref={inputRef}
             aria-label={name}
             data-testid={name}
-            className={`${className} ${
+            className={`${className} ${styles.input}  ${styles.inputIcon} ${
               errors && required
                 ? (styles.errorInput, styles.input)
                 : styles.input
@@ -189,7 +188,7 @@ const Input: React.FC<InputComponentProps> = ({
           ref={inputRef}
           aria-label={name}
           data-testid={name}
-          className={`${className} ${
+          className={`${className} ${styles.input}  ${
             errors && required ? styles.errorInput : ""
           }`}
           tabIndex={0}
