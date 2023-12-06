@@ -25,7 +25,7 @@ import Wisdom from "./pages/wisdom/Wisdom";
 import Dev from "./pages/dev/Dev";
 import CollectionView from "./pages/wisdom/CollectionView";
 import ExpertView from "./pages/expert/ExpertView";
-import Table from "./pages/wisdom/components/Table";
+import Avatar from "./pages/Avatar/Avatar";
 
 function App() {
   return (
@@ -51,6 +51,8 @@ function App() {
           </Route>
           <Route path="/expert" element={<ExpertView />}>
             <Route path="wisdom" element={<Wisdom />}></Route>
+            <Route index element={<HomePage />}></Route>
+            <Route path="avatar" element={<Avatar />}></Route>
             <Route
               path="default_collection"
               element={<CollectionView />}

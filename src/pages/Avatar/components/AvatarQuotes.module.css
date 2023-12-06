@@ -1,0 +1,27 @@
+.wrapper{
+    border-radius: 20px;
+    border: 1px solid var(--Grey-3, #E6E9EF);
+    background: #FFF;
+    box-shadow: 2px 2px 15px 0px rgba(153, 153, 169, 0.15);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tags{
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.message{
+    border-radius: 0px 24px 24px 24px;
+    background: var(--Grey-03, #F1F0F7);
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    flex-direction: column;
+    max-width: 600px;
+}
