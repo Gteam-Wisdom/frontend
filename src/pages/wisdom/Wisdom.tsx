@@ -6,7 +6,7 @@ import Collection from "./components/Collection";
 import axios from "axios";
 import { CollectionItem, CollectionsList } from "./utils/collection";
 import { Outlet } from "react-router";
-import { useHeaderText } from "../expert/Layout/HeaderContext";
+import { useHeaderText } from "../Layout/HeaderContext";
 
 const Wisdom = () => {
   const [page, setPage] = useState("1");

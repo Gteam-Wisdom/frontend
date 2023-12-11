@@ -1,5 +1,5 @@
-import { FunctionComponent, PropsWithChildren } from "react";
-import { Modal } from "react-bootstrap";
+import React, { FunctionComponent, PropsWithChildren, useEffect } from "react";
+import Modal from "react-modal";
 import styles from "./DialogCard.module.css";
 import Typography from "../../../../components/Typography";
 import Buttons from "../../../../components/buttons/Buttons";
@@ -20,8 +20,15 @@ const ModalDialog: FunctionComponent<ModalDialogProps> = ({
   name,
 }) => {
   return (
-    <Modal show={open} onHide={onClose}>
-      <Modal.Body className={styles.bg}>
+    <>
+      <Modal
+        isOpen={open}
+        onRequestClose={onClose}
+        contentLabel={name}
+        className={styles.bg}
+        overlayClassName={styles.overlay}
+        shouldCloseOnOverlayClick={true}
+      >
         <Typography bold sx={{ fontSize: "24px", alignSelf: "center" }}>
           {name}
         </Typography>
@@ -34,8 +41,8 @@ const ModalDialog: FunctionComponent<ModalDialogProps> = ({
             Submit
           </Button>
         </Buttons>
-      </Modal.Body>
-    </Modal>
+      </Modal>
+    </>
   );
 };
 

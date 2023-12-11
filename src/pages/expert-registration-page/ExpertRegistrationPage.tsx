@@ -18,6 +18,7 @@ interface ExpertRegistrationPageProps {
   nextPageNumber?: (pageNumber: string) => void;
   totalSteps?: number;
   isExpert?: boolean;
+  addData: (e: any) => void;
 }
 
 const ExpertRegistrationPage: FunctionComponent<
@@ -28,6 +29,7 @@ const ExpertRegistrationPage: FunctionComponent<
   totalSteps = 0,
   setCurrentPage,
   isExpert,
+  addData,
 }) => {
   const navigate = useNavigate();
 
@@ -55,6 +57,7 @@ const ExpertRegistrationPage: FunctionComponent<
     }
     const nextPageIndex =
       currentPage < totalSteps ? currentPage + 1 : totalSteps;
+    addData(formData);
     setCurrentPage(nextPageIndex);
     return navigate("/become-an-expert/verify-email");
   };

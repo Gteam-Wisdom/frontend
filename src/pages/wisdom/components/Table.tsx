@@ -6,6 +6,9 @@ import Sort from "./Sort";
 import Stack from "../../../components/Stack";
 import Add from "./Add";
 import { CollectionItem } from "../utils/collection";
+import EditMenu from "./EditMainCollection";
+import UploadNewFile from "./dialogs/UploadNewFile";
+import UploadNewLink from "./dialogs/UploadNewLink";
 
 const findFiles = (searchString: string, data: CollectionItem[]) => {
   return data.filter(
@@ -109,10 +112,21 @@ const WisdomTable: FunctionComponent<{ data: CollectionItem[] }> = ({
                   </div>
                 </td>
                 <td>
-                  <div>
-                    <div className={styles.tag}>hello</div>
-                    <div className={styles.tag}>world</div>
-                  </div>
+                  <Stack
+                    direction="row"
+                    gap={"20px"}
+                    justify="space-between"
+                    align="center"
+                  >
+                    <Stack direction="row" gap={"10"}>
+                      <div className={styles.tag}>hello</div>
+                      <div className={styles.tag}>world</div>
+                    </Stack>
+                    <EditMenu>
+                      <UploadNewFile />
+                      <UploadNewLink />
+                    </EditMenu>
+                  </Stack>
                 </td>
               </tr>
             ))}

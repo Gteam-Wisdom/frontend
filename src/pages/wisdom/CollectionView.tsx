@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import WisdomTable from "./components/Table";
 import axios from "axios";
 import { CollectionItem } from "./utils/collection";
-import { useHeaderText } from "../expert/Layout/HeaderContext";
+import { useHeaderText } from "../Layout/HeaderContext";
 
 const CollectionView = () => {
   const [files, setFiles] = useState<CollectionItem[]>([]);

@@ -2,9 +2,10 @@ import { FunctionComponent, PropsWithChildren } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import styles from "./Layout.module.css";
-import Wisdom from "../assets/wisdom.svg";
-import Home from "../assets/home.svg";
-import Human from "../assets/humanFillWhite.svg";
+import Wisdom from "../../assets/img/wisdom.svg";
+import Home from "../../assets/img/home.svg";
+import Human from "../../assets/img/humanFillWhite.svg";
+import Profile from "../../assets/img/profile.svg";
 
 import { HeaderProvider } from "./HeaderContext";
 
@@ -23,6 +24,11 @@ const MenuItems = [
     url: "avatar",
     icon: Human,
     text: "Avatar",
+  },
+  {
+    url: "profile",
+    icon: Profile,
+    text: "Profile",
   },
 ];
 

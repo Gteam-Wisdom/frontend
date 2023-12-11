@@ -8,13 +8,13 @@ import ExpertProfileView from "../ExpertProfile/ExpertProfileView";
 
 const Dev: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
-    <div className={styles.wrapper}>
-      {/* <UploadNewFile />
+    <>
+      {/* <UploadNewFile /> */}
       <UploadNewLink />
-      <CreateNewCollection /> */}
+      {/* <CreateNewCollection /> */}
       {/* <Avatar></Avatar> */}
-      <ExpertProfileView />
-    </div>
+      {/* <ExpertProfileView /> */}
+    </>
   );
 };
 

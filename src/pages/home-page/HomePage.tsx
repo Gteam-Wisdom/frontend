@@ -11,7 +11,7 @@ import Asking from "./components/Asking";
 const HomePage: FunctionComponent = () => {
   return (
     <div className={styles.homeWrapper}>
-      <Stack direction="row" spacing={0} align="center" className={styles.menu}>
+      <Stack direction="row" align="center" className={styles.menu}>
         <Input
           container={{
             width: "476px",
@@ -31,7 +31,7 @@ const HomePage: FunctionComponent = () => {
       >
         5 most popular categories
       </Typography>
-      <Stack direction="row" spacing={0} className="categoryWrapper">
+      <Stack direction="row" className="categoryWrapper">
         <Category className={styles.category}>Investment</Category>
         <Category className={styles.category}>Work</Category>
         <Category className={styles.category}>Psychology</Category>
@@ -47,7 +47,7 @@ const HomePage: FunctionComponent = () => {
       >
         Experts near me
       </Typography>
-      <Stack direction="row" spacing={0} className={styles.sectionWrapper}>
+      <Stack direction="row" className={styles.sectionWrapper}>
         <ExpertCard></ExpertCard>
         <ExpertCard></ExpertCard>
         <ExpertCard></ExpertCard>
@@ -62,7 +62,7 @@ const HomePage: FunctionComponent = () => {
       >
         Pinned Experts / Experts you chatting with
       </Typography>
-      <Stack direction="row" spacing={0} className={styles.sectionWrapper}>
+      <Stack direction="row" className={styles.sectionWrapper}>
         <ExpertCard></ExpertCard>
         <ExpertCard></ExpertCard>
         <ExpertCard></ExpertCard>
@@ -78,7 +78,7 @@ const HomePage: FunctionComponent = () => {
       >
         What others are asking experts
       </Typography>
-      <Stack direction="row" spacing={0} className={styles.sectionWrapper}>
+      <Stack direction="row" className={styles.sectionWrapper}>
         <Asking></Asking>
         <Asking></Asking>
         <Asking></Asking>

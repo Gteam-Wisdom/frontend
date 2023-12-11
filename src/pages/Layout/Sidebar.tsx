@@ -1,9 +1,10 @@
 import React, { FunctionComponent, useState } from "react";
 import styles from "./Sidebar.module.css";
-import ExpertIcon from "../assets/expertIcon.svg";
+import ExpertIcon from "../../assets/img/expertIcon.svg";
 import { useNavigate } from "react-router";
-import ToggleIcon from "../assets/toggleSidebar.svg";
+import ToggleIcon from "../../assets/img/toggleSidebar.svg";
 import { useHeaderText } from "./HeaderContext";
+import Typography from "../../components/Typography";
 
 interface MenuItem {
   url: string;
@@ -53,7 +54,14 @@ const Sidebar: FunctionComponent<Props> = ({ items }) => {
           }`}
         >
           <img src={e.icon} alt="menu element" />
-          {isOpen && <h1 className={styles.text}>{e.text}</h1>}
+          {isOpen && (
+            <Typography
+              sx={{ color: "white" }}
+              variant={selectedItem === e.url ? "h3" : "p1"}
+            >
+              {e.text}
+            </Typography>
+          )}
         </div>
       ))}
     </div>

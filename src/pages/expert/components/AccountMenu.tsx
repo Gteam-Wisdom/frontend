@@ -1,8 +1,7 @@
-import React from "react";
 import { Dropdown } from "react-bootstrap";
 import styles from "./AccountMenu.module.css";
-import Human from "../assets/human.svg"; // Your human icon
-import DropdownArrow from "../assets/dropdownArrow.svg";
+import Human from "../../../assets/img/human.svg"; // Your human icon
+import DropdownArrow from "../../../assets/img/dropdownArrow.svg";
 
 const AccountMenu = () => {
   return (

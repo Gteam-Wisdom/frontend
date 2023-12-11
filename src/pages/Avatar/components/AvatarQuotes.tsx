@@ -21,7 +21,9 @@ const AvatarQuotes = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore
         </Typography>
-        <Typography variant="secondary">10:20</Typography>
+        <Typography variant="p2" secondary>
+          10:20
+        </Typography>
       </div>
     </div>
   );

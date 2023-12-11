@@ -1,23 +1,20 @@
 /* Table styles TODO: move to components folder*/
 
 .tableWrapper {
-    width: 90%;
-    justify-self: center;
+    width: 100%;
+    align-self: flex-start;
     background: #fcfcfd;
     box-shadow: 0px 0px 16px 0px rgba(180, 191, 209, 0.35);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    padding: 12px;
     gap: 8px;
-    margin: 10px;
     overflow-x: auto; 
 }
 
 .table {
     border-collapse: collapse;
     width: 100%;
-    overflow: hidden; 
 }
 
 .table th {

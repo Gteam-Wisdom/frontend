@@ -24,6 +24,8 @@ interface ExpertRegistrationPageProps {
   nextPageNumber?: (pageNumber: string) => void;
   totalSteps?: number;
   isExpert?: boolean;
+  data: any;
+  onSubmit: () => void;
 }
 
 const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
@@ -32,6 +34,8 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
   totalSteps = 0,
   setCurrentPage,
   isExpert,
+  data,
+  onSubmit,
 }) => {
   const [isToggled1, setIsToggled1] = useState(false);
   const [isToggled2, setIsToggled2] = useState(false);
@@ -39,7 +43,8 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    navigate("/learner/profile");
+    onSubmit();
+    navigate("/expert");
   };
 
   return (
@@ -62,10 +67,10 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
                 justifyContent: "space-between",
               }}
             >
-              <Typography className={styles.sectionTitle}>
-                John Wilson
+              <Typography variant="h1">{data.fullname}</Typography>
+              <Typography variant="p1" secondary>
+                Investment expert
               </Typography>
-              <Typography>Investment expert</Typography>
             </div>
           </div>
           <button>
@@ -73,7 +78,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
           </button>
         </div>
         <div className={styles.sectionWithEdit}>
-          <Typography className={styles.sectionTitle}>My category</Typography>
+          <Typography variant="h2">My category</Typography>
           <button>
             <img src={Edit} alt="Edit" />
           </button>
@@ -131,22 +136,24 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
         <div className="flex-column-wrapper">
           <div className={styles.flexColumnItem}>
             <img src={Map} alt="Map" />
-            <Typography sx={{ marginLeft: "2px" }}>
+            <Typography variant="p1" sx={{ marginLeft: "2px" }} secondary>
               W. Gray St. Utica, Pennsylvania
             </Typography>
           </div>
           <div className={styles.flexColumnItem}>
             <img src={Phone} alt="Phone" />
-            <Typography sx={{ marginLeft: "2px" }}>(270) 555-0117</Typography>
+            <Typography sx={{ marginLeft: "2px" }} variant="p1" secondary>
+              {data.phone}
+            </Typography>
           </div>
           <div className={styles.flexColumnItem}>
             <img src={Mail} alt="Mail" />
-            <Typography sx={{ marginLeft: "2px" }}>
+            <Typography sx={{ marginLeft: "2px" }} variant="p1" secondary>
               <Link
                 to="mailto:jenny.wilson@example.com"
                 className="custom-link"
               >
-                jenny.wilson@example.com
+                {data.email}
               </Link>
             </Typography>
           </div>
@@ -158,11 +165,8 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
             <img src={Edit} alt="Edit" />
           </button>
         </div>
-        <Typography className={styles.section}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit amet,
-          ¡consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          amet, consectetur, Lorem ipsum dolor sit amet, consectetur adipiscing
-          elit jamet, consectetur?
+        <Typography variant="p1" secondary>
+          {data.bio} AAAAAAA
         </Typography>
         <Divider />
         <div className={styles.sectionWithEdit}>
@@ -174,7 +178,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
           </button>
         </div>
         <Link to="https://www.linkedin.com/in/sylvain-duranton/">
-          <Typography className={styles.section}>
+          <Typography className={styles.section} variant="p1" secondary>
             https://www.linkedin.com/in/sylvain-duranton/
           </Typography>
         </Link>

@@ -5,11 +5,16 @@ import ModalHeader from "../../components/modal-header/ModalHeader";
 import Input from "../../components/input/Input";
 import { useNavigate } from "react-router";
 import styles from "./WelcomePage.module.css";
+import axios from "axios";
+import { sessionStorageSet } from "../../utils";
+import { handleLoginOrSignupSuccess } from "../../api/interceptors";
+import { useAppStore } from "../../store/store";
 
 const LoginView = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [, dispatch] = useAppStore();
 
   const onSubmit = useCallback(
     (e: FormEvent) => {
@@ -24,9 +29,20 @@ const LoginView = () => {
       }
 
       // If validation is successful, navigate to the dashboard
-      navigate("/learner/profile");
+      const login = async () => {
+        const tokens = await axios.post("login", {
+          email: email,
+          password: password,
+        });
+        sessionStorageSet("access_token", tokens.data.access_token);
+        sessionStorageSet("refresh_token", tokens.data.refresh_token);
+        handleLoginOrSignupSuccess();
+        dispatch({ type: "LOG_IN" });
+      };
+
+      navigate("/learner");
     },
-    [navigate, email, password]
+    [email, password, navigate, dispatch]
   );
 
   return (

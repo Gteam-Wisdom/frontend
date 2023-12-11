@@ -28,8 +28,8 @@ const ExpertCard = () => {
       >
         Investment Expert
       </Typography>
-      <Stack direction="row" spacing={0} justify="space-between">
-        <Stack direction="row" spacing={0} className={styles.followersWrapper}>
+      <Stack direction="row" justify="space-between">
+        <Stack direction="row" className={styles.followersWrapper}>
           <div className={styles.svgWrapper}>
             <img src={people} alt="followers" />
           </div>

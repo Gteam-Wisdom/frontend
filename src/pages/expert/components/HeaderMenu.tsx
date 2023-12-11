@@ -1,8 +1,8 @@
 import styles from "./HeaderMenu.module.css";
-import Search from "../assets/search.svg";
-import Record from "../assets/record.svg";
-import Question from "../assets/question.svg";
-import Logo from "../assets/logo.svg";
+import Search from "../../../assets/img/search.svg";
+import Record from "../../../assets/img/record.svg";
+import Question from "../../../assets/img/question.svg";
+import Logo from "../../../assets/img/logo.svg";
 import AccountMenu from "./AccountMenu";
 
 const HeaderMenu = () => {

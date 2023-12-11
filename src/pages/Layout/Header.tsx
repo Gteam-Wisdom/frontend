@@ -1,11 +1,9 @@
-import HeaderMenu from "../components/HeaderMenu";
+import HeaderMenu from "../expert/components/HeaderMenu";
 import styles from "./Header.module.css";
 import { useHeaderText } from "./HeaderContext";
 
 const Header = () => {
   const { headerText } = useHeaderText();
-
-  console.log(headerText.length);
 
   return (
     <div className={styles.wrapper}>

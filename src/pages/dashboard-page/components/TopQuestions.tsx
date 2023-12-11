@@ -100,7 +100,7 @@ const TopQuestions = () => {
                 className={styles.questionContent}
                 onClick={() => handleArrowClick(index)}
               >
-                <Stack direction="row" spacing={0}>
+                <Stack direction="row">
                   <Typography sx={{ fontWeight: 600, marginRight: "10px" }}>
                     {index + 1}
                   </Typography>

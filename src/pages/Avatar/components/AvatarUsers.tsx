@@ -10,7 +10,7 @@ const AvatarUsers = () => {
           <Typography bold sx={{ width: "fit-content" }}>
             Alice Cooper
           </Typography>
-          <Typography variant="secondary">29 Sep 2023. 08.20pm</Typography>
+          <Typography variant="p2">29 Sep 2023. 08.20pm</Typography>
           <div className={styles.status}></div>
         </Stack>
       </div>

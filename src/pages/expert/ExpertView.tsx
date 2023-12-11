@@ -1,4 +1,4 @@
-import Layout from "./Layout/Layout";
+import Layout from "../Layout/Layout";
 import { Outlet } from "react-router";
 
 const ExpertView = () => {

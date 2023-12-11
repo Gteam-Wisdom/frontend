@@ -22,4 +22,8 @@
 }
 .navWrapper {
     align-self: flex-start;
+    width: fit-content;
+    display: flex;
+    gap: 32px;
+    padding-bottom: 28px;
 }

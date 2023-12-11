@@ -13,13 +13,14 @@ import { useNavigate } from "react-router";
 
 // import styles from './LearnerOnboardingPage.module.css';
 
-const LearnerOnboardingPage = () => {
+const LearnerOnboardingPage = ({ onSubmit }: any) => {
   const [page, setPage] = useState(1); // Start with page 1
   const navigate = useNavigate();
 
   const handleClick = useCallback(() => {
-    navigate("/learner/profile");
+    navigate("/learner");
   }, [navigate]);
+
   const nextPageNumber = (pageNumber: string) => {
     const numericPageNumber = parseInt(pageNumber, 10);
     if (
@@ -33,11 +34,11 @@ const LearnerOnboardingPage = () => {
     }
   };
 
-  const onButtonClick = (event: any) => {
-    event.preventDefault();
-    const nextPageIndex = page < 4 ? page + 1 : 4;
-    setPage(nextPageIndex);
-  };
+  // const onButtonClick = (event: any) => {
+  //   event.preventDefault();
+  //   const nextPageIndex = page < 4 ? page + 1 : 4;
+  //   setPage(nextPageIndex);
+  // };
 
   const renderCurrentPage = () => {
     switch (page) {
@@ -57,7 +58,13 @@ const LearnerOnboardingPage = () => {
   return (
     <Layout>
       <ModalHeader title={"Onboarding"} />
-      <form onSubmit={(event) => onButtonClick(event)}>
+      {/* Use the onSubmit prop in the form's onSubmit handler */}
+      <form
+        onSubmit={() => {
+          onSubmit();
+          navigate("/learner");
+        }}
+      >
         <MultiStepProgressBar
           page={page}
           onPageNumberClick={nextPageNumber}
@@ -68,7 +75,7 @@ const LearnerOnboardingPage = () => {
           <Button isWide hasBorder>
             Skip
           </Button>
-          <Button isAccent isWide onClick={handleClick}>
+          <Button isAccent isWide type="submit">
             Next
           </Button>
         </Buttons>

@@ -7,11 +7,10 @@
   
 .main {
   display: flex;
-  padding: 0;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
+  height: fit-content;
+  width: calc(100% - 88px);
+  padding: 28px 44px 0 44px;
+
 }
 
 .bg{

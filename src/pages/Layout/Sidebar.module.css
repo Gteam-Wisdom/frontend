@@ -38,9 +38,6 @@
     align-items: center;
     flex-direction: column;
 }
-.text{
-    color: #FFF;
-}
 
 .buttonClicked{
     width: 100%;

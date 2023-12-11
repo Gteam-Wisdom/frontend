@@ -21,12 +21,12 @@ const NavBar: FunctionComponent<NavBarProps> = ({ pageClickHandle }) => {
   return (
     <div className={styles.navWrapper}>
       <button id="1" onClick={handleClick}>
-        <Typography className={num === "1" ? styles.selected : styles.default}>
+        <Typography variant="p1" bold={num === "1"} underline={num === "1"}>
           List View
         </Typography>
       </button>
       <button id="2" onClick={handleClick}>
-        <Typography className={num === "2" ? styles.selected : styles.default}>
+        <Typography variant="p1" bold={num === "2"} underline={num === "2"}>
           Collection View
         </Typography>
       </button>

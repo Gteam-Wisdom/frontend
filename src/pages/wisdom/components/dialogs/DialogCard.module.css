@@ -1,5 +1,9 @@
 .bg {
     display: flex;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     width: 528px;
     padding: 24px;
     flex-direction: column;
@@ -11,14 +15,8 @@
     background:  #FFF;
     box-shadow: 0px 0px 22px 0px rgba(180, 191, 209, 0.35);
 }
-
-.modalName {
-    color:  #17192B;
-    text-align: center;
-    font-family: "Nunito Sans";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 26px;
-    align-self: center;
-}
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

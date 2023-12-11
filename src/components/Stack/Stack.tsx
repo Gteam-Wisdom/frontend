@@ -5,7 +5,6 @@ import styles from "./Stack.module.css";
 
 interface StackProps {
   direction?: "row" | "column";
-  spacing?: number;
   children?: ReactNode;
   align?: "flex-start" | "center" | "flex-end" | "stretch" | "baseline";
   justify?:
@@ -15,32 +14,32 @@ interface StackProps {
     | "space-between"
     | "space-around";
   className?: string;
-  gap?: number;
+  p?: string;
+  gap?: string;
 }
 
 const Stack: React.FC<StackProps> = ({
   direction,
-  spacing,
   children,
   align,
   justify,
   className,
   gap,
+  p,
   ...rest
 }) => {
   const stackClass = classNames(
     styles.stack,
     styles[direction as string],
-    styles[`spacing-${spacing}`],
     styles[`align-${align}`],
     styles[`justify-${justify}`],
-    styles[`gap-${gap}`],
     className
   );
 
   const customStyle = {
-    marginRight: spacing + "px",
-    // Add more styles as needed
+    padding: p + "px",
+    gap: gap + "px",
+    justifyContent: justify,
   };
 
   return (
@@ -52,7 +51,6 @@ const Stack: React.FC<StackProps> = ({
 
 Stack.defaultProps = {
   direction: "column",
-  spacing: 0,
   align: "stretch",
   justify: "flex-start",
 };
