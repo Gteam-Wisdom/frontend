@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { BsStar, BsStarFill } from "react-icons/bs";
+import StarFilled from "../../../assets/img/starFilled.svg";
+import StarOutlined from "../../../assets/img/starOutlined.svg";
+
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import Typography from "../../../components/Typography";
 
 const fixNumber = (n: number) => Number.parseFloat(String(n)).toFixed(2);
 
@@ -32,7 +35,11 @@ const UserRating = ({
         }
       >
         <span className="mx-1" onClick={() => handleStarClick(starNumber)}>
-          {filled ? <BsStarFill /> : <BsStar />}
+          {filled ? (
+            <img src={StarFilled} alt="" style={{ height: "15px" }} />
+          ) : (
+            <img src={StarOutlined} alt="" style={{ height: "13px" }} />
+          )}
         </span>
       </OverlayTrigger>
     );
@@ -43,9 +50,9 @@ const UserRating = ({
   );
 
   return (
-    <div className="rating">
+    <Typography variant="p2" secondary>
       {stars} {fixNumber(rating)} ({fixNumber(maxStars)})
-    </div>
+    </Typography>
   );
 };
 

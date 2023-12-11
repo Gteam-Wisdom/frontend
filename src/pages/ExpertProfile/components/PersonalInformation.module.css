@@ -17,6 +17,11 @@
     max-width: 450px;
 }
 
+.personal{
+  display: flex;
+  gap: 36px;
+}
+
 .mediaLinksContainer {
     margin: 1.5em 0;
     max-height: 200px;
@@ -86,5 +91,12 @@ text-align: left;
     font-size: 18px;
     font-weight: 600;
     text-align: start;
+}
+
+.wrapper{
+  padding: 24px;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 0px 22px 0px rgba(180, 191, 209, 0.35);
 }
 

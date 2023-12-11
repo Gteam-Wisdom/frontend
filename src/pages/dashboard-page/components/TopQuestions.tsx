@@ -100,11 +100,9 @@ const TopQuestions = () => {
                 className={styles.questionContent}
                 onClick={() => handleArrowClick(index)}
               >
-                <Stack direction="row">
-                  <Typography sx={{ fontWeight: 600, marginRight: "10px" }}>
-                    {index + 1}
-                  </Typography>
-                  <Typography>{qna.question}</Typography>
+                <Stack direction="row" gap="10">
+                  <Typography variant="h3">{index + 1}</Typography>
+                  <Typography variant="h3">{qna.question}</Typography>
                 </Stack>
 
                 <span>
@@ -118,7 +116,9 @@ const TopQuestions = () => {
             </ListGroup.Item>
             {expandedQuestion === index && (
               <ListGroup.Item className={styles.answer}>
-                <Typography sx={{ marginLeft: 30 }}>{qna.answer}</Typography>
+                <Typography sx={{ marginLeft: 30 }} variant="p2" secondary>
+                  {qna.answer}
+                </Typography>
               </ListGroup.Item>
             )}
           </div>

@@ -13,7 +13,7 @@ interface StackProps {
     | "flex-end"
     | "space-between"
     | "space-around";
-  className?: string;
+  className?: any;
   p?: string;
   gap?: string;
 }
