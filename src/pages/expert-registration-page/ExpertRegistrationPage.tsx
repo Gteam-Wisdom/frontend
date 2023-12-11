@@ -48,6 +48,14 @@ const ExpertRegistrationPage: FunctionComponent<
     }));
   };
 
+  const handleChangePass = (e: any) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      password: value,
+    }));
+  };
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const errors = !fullname || !optionSelected;
@@ -101,6 +109,16 @@ const ExpertRegistrationPage: FunctionComponent<
         />
         <AvatarUpload onUpload={handleUpload} />
         {/*<CountrySelect onChange={handleCountryChange}/>*/}
+        <Input
+          label="Password"
+          showPasswordToggle
+          required
+          type="password"
+          name="fullname"
+          className={styles.input}
+          value={password}
+          onChange={handleChangePass}
+        />
         <MultiSelect
           required
           key="example_id"

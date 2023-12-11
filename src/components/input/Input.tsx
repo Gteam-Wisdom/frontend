@@ -94,7 +94,6 @@ const Input: FunctionComponent<InputComponentProps> = ({
         />
       ) : showPasswordToggle ? (
         <div className={styles.passwordContainer}>
-          <img src={OpenEye} alt="hide" />
           <input
             required
             ref={inputRef}
