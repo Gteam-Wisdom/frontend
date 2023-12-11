@@ -39,6 +39,7 @@ const LoginView = () => {
         handleLoginOrSignupSuccess();
         dispatch({ type: "LOG_IN" });
       };
+      login();
 
       navigate("/learner");
     },
