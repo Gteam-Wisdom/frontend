@@ -17,7 +17,7 @@ import TopQuestions from "../../dashboard-page/components/TopQuestions";
 
 const PersonalInformation = () => {
   return (
-    <div>
+    <div className={styles.sectionWrapper}>
       <div className={styles.personal}>
         <div className={styles.wrapper}>
           <div className={styles.sectionWithEdit}>
@@ -174,7 +174,7 @@ const PersonalInformation = () => {
             </div>
           </div>
         </div>
-        <Stack>
+        <Stack className={styles.otherWrapper}>
           <LiveChat></LiveChat>
         </Stack>
       </div>

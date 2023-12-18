@@ -1,0 +1,18 @@
+.personal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.section {
+    margin: 1em;
+    min-width: 450px;
+    height: fit-content;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: start;
+}
+

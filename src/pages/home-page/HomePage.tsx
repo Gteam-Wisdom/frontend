@@ -7,6 +7,7 @@ import Category from "./components/Category";
 import ExpertCard from "./components/ExpertCard";
 import Input from "../../components/input/Input";
 import Asking from "./components/Asking";
+import Tag from "../wisdom/components/Tag";
 
 const HomePage: FunctionComponent = () => {
   return (
@@ -19,24 +20,19 @@ const HomePage: FunctionComponent = () => {
           isLocation
           placeholder="Lorem ipsum.."
         ></Input>
-        <Typography>Location</Typography>
-        <Typography>Category</Typography>
-        <Typography>More Filters</Typography>
+        <Typography variant="h2">Location</Typography>
+        <Typography variant="h2">Category</Typography>
+        <Typography variant="h2">More Filters</Typography>
       </Stack>
 
-      <Typography
-        sx={{
-          fontWeight: 700,
-        }}
-      >
+      <Typography variant="h1" bold>
         5 most popular categories
       </Typography>
       <Stack direction="row" className="categoryWrapper">
-        <Category className={styles.category}>Investment</Category>
-        <Category className={styles.category}>Work</Category>
-        <Category className={styles.category}>Psychology</Category>
-        <Category className={styles.category}>Psychology</Category>
-        <Category className={styles.category}>Investment</Category>
+        <Tag text={"Investment"}></Tag>
+        <Tag text={"Work"}></Tag>
+        <Tag text={"Psychology"}></Tag>
+        <Tag text={"Investment"}></Tag>
       </Stack>
       <Divider />
 
@@ -55,11 +51,7 @@ const HomePage: FunctionComponent = () => {
       </Stack>
 
       <Divider />
-      <Typography
-        sx={{
-          fontWeight: 700,
-        }}
-      >
+      <Typography variant="h1" bold>
         Pinned Experts / Experts you chatting with
       </Typography>
       <Stack direction="row" className={styles.sectionWrapper}>
@@ -71,11 +63,7 @@ const HomePage: FunctionComponent = () => {
       </Stack>
       <Divider />
 
-      <Typography
-        sx={{
-          fontWeight: 700,
-        }}
-      >
+      <Typography variant="h1" bold>
         What others are asking experts
       </Typography>
       <Stack direction="row" className={styles.sectionWrapper}>

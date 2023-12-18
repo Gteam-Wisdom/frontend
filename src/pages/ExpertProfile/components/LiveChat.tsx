@@ -6,7 +6,7 @@ import styles from "./PersonalInformation.module.css";
 const LiveChat = () => {
   return (
     <Stack align="flex-start" justify="space-between" gap={"50"}>
-      <div className={styles.wrapper} style={{ width: "500px" }}>
+      <div className={styles.wrapper} style={{ width: "700px" }}>
         <Stack align="flex-start">
           <Stack align="flex-start" gap="24">
             <Typography variant="h2" bold>
@@ -30,7 +30,7 @@ const LiveChat = () => {
           ></ToggleSwitch>
         </Stack>
       </div>
-      <div className={styles.wrapper} style={{ width: "500px" }}>
+      <div className={styles.wrapper} style={{ width: "700px" }}>
         <Stack align="flex-start">
           <Stack align="flex-start" gap="24">
             <Typography variant="h2" bold>

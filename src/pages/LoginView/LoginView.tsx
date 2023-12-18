@@ -16,35 +16,28 @@ const LoginView = () => {
   const [password, setPassword] = useState("");
   const [, dispatch] = useAppStore();
 
-  const onSubmit = useCallback(
-    (e: FormEvent) => {
-      e.preventDefault();
-      console.log("Submitted:", e);
-
-      // Perform your form validation here
-      if (!email || !password) {
-        // Display an error message or handle validation accordingly
-        console.log("Please fill in all required fields.");
-        return;
-      }
-
-      // If validation is successful, navigate to the dashboard
-      const login = async () => {
-        const tokens = await axios.post("login", {
-          email: email,
-          password: password,
-        });
-        sessionStorageSet("access_token", tokens.data.access_token);
-        sessionStorageSet("refresh_token", tokens.data.refresh_token);
-        handleLoginOrSignupSuccess();
-        dispatch({ type: "LOG_IN" });
-      };
-      login();
-
-      navigate("/learner");
-    },
-    [email, password, navigate, dispatch]
-  );
+  const onSubmit = (e: FormEvent) => {
+    // Perform your form validation here
+    if (!email || !password) {
+      // Display an error message or handle validation accordingly
+      console.log("Please fill in all required fields.");
+      return;
+    }
+    // If validation is successful, navigate to the dashboard
+    const login = async () => {
+      const tokens = await axios.post("http://localhost:3000/auth/signin", {
+        email: email,
+        password: password,
+      });
+      sessionStorageSet("access_token", tokens.data.access_token);
+      sessionStorageSet("refresh_token", tokens.data.refresh_token);
+      handleLoginOrSignupSuccess();
+    };
+    login();
+    dispatch({ type: "LOG_IN" });
+    navigate("/learner", { replace: true });
+    window.location.reload();
+  };
 
   return (
     <Layout>

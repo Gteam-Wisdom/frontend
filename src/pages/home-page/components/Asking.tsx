@@ -10,25 +10,20 @@ function Asking() {
         <img src={Man} alt="avatar"></img>
         <Stack justify="center">
           <Typography>Character Assistant</Typography>
-          <Typography
-            sx={{
-              fontSize: "10px",
-              margin: "2px",
-            }}
-          >
+          <Typography variant="p2" secondary sx={{ alignSelf: "start" }}>
             Try Saying:
           </Typography>
         </Stack>
       </div>
 
       <div className={styles.question}>
-        <Typography sx={{ fontSize: "12px" }}>
+        <Typography variant="p2" sx={{ textAlign: "start" }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
           laboriosam?
         </Typography>
       </div>
       <div className={styles.question}>
-        <Typography sx={{ fontSize: "12px" }}>
+        <Typography variant="p2" sx={{ textAlign: "start" }}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
           laboriosam?
         </Typography>

@@ -21,7 +21,8 @@
     padding: 20px;
 }
 .navWrapper {
-    align-self: flex-start;
+    display: flex;
+    align-items: flex-start;
     align-self: center;
     width: 100%;
 }

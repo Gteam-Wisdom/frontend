@@ -29,29 +29,27 @@ function BecomeALearner() {
 
   const onSubmit = async () => {
     try {
-      // Replace 'YOUR_API_ENDPOINT' with the actual endpoint
-      const apiEndpoint = "http://localhost:2999/auth/signup";
+      const apiEndpoint = "http://localhost:3000/auth/signup";
 
-      // Perform POST request to the API endpoint with the data
       const response = await axios.post(apiEndpoint, data);
 
-      console.log("Response from server:", response);
+      if (response.data && response.data.access_token) {
+        localStorage.setItem("refresh_token", response.data.refresh_token);
+        sessionStorage.setItem("access_token", response.data.access_token);
 
-      if (!response.data.access_token) {
+        handleLoginOrSignupSuccess();
+      } else {
+        console.error("Unexpected response structure:", response);
         return;
       }
-
-      localStorageSet("refresh_token", response.data.refresh_token);
-      sessionStorageSet("access_token", response.data.access_token);
-      handleLoginOrSignupSuccess();
-
-      dispatch({ type: "SIGN_UP" });
-      navigate("/learner");
     } catch (error) {
-      // Handle errors (e.g., show an error message)
       console.error("Error submitting data:", error);
+      return;
     }
+    dispatch({ type: "LOG_IN" });
+    navigate("/learner", { replace: true });
   };
+
   return (
     <div className={styles.wrapper}>
       <BecomeHeader />

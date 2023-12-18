@@ -79,7 +79,7 @@ const TopQuestions = () => {
   };
 
   return (
-    <Container className={styles.container}>
+    <div className={styles.container}>
       <Typography
         sx={{
           margin: 10,
@@ -124,7 +124,7 @@ const TopQuestions = () => {
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 };
 

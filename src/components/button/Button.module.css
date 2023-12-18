@@ -37,3 +37,10 @@ button {
     background: var(--c-purple02);
     color: white;
 }
+.fit {
+    padding: 16px;
+    width: fit-content;
+}
+.rounded {
+    border-radius: 10em;
+}

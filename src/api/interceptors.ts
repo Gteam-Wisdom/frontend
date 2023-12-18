@@ -11,7 +11,7 @@ import { SignUp } from "./signup";
 const refreshAccessToken = async () => {
   try {
     // Make a request to your server to refresh the access token
-    const response = await axios.post("localhost:2999/auth/refresh", {
+    const response = await axios.post("localhost:3000/auth/refresh", {
       refresh_token: sessionStorageGet("refresh_token"),
     });
 
@@ -34,7 +34,6 @@ const refreshAccessToken = async () => {
 
 // Axios request interceptor to attach the access token to outgoing requests
 const ResetInterceptors = () => {
-  const [, dispatch] = useAppStore();
   // Remove all interceptors
   axios.interceptors.request.eject(0);
   axios.interceptors.response.eject(0);
@@ -43,7 +42,6 @@ const ResetInterceptors = () => {
   axios.interceptors.request.use(
     (config) => {
       const accessToken = sessionStorageGet("access_token");
-      dispatch({ type: "SIGN_UP" });
 
       console.log(accessToken);
 
@@ -74,8 +72,6 @@ const ResetInterceptors = () => {
           const newAccessToken = await refreshAccessToken();
           const originalRequest = error.config;
           originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-          dispatch({ type: "SIGN_UP" });
-          console.log("trueeeee");
           return axios(originalRequest);
         } catch (refreshError) {
           return Promise.reject(refreshError);
@@ -87,11 +83,6 @@ const ResetInterceptors = () => {
   );
 };
 
-// Call resetInterceptors after a successful login or signup
 export const handleLoginOrSignupSuccess = () => {
-  // Your logic for handling a successful login or signup
-  // ...
-
-  // Reset Axios interceptors to include the new access token
   ResetInterceptors();
 };

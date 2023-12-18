@@ -7,7 +7,7 @@ import message from "./assets/message.svg";
 
 const ExpertCard = () => {
   return (
-    <Stack className={styles.cardBackground} direction="column">
+    <Stack className={styles.cardBackground} direction="column" gap="10">
       <img src={photo} alt="avatar" />
       <Typography
         sx={{
@@ -17,15 +17,7 @@ const ExpertCard = () => {
       >
         Leslie Alexander
       </Typography>
-      <Typography
-        sx={{
-          width: "100%",
-          textAlign: "center",
-          color: "rgba(107, 105, 133, 1)",
-          fontSize: "10px",
-          margin: 2,
-        }}
-      >
+      <Typography variant="p1" secondary>
         Investment Expert
       </Typography>
       <Stack direction="row" justify="space-between">
@@ -33,7 +25,9 @@ const ExpertCard = () => {
           <div className={styles.svgWrapper}>
             <img src={people} alt="followers" />
           </div>
-          <Typography sx={{ color: "rgba(100, 16, 143, 1)" }}>3.380</Typography>
+          <Typography sx={{ color: "rgba(100, 16, 143, 1)" }} variant="h3">
+            3.380
+          </Typography>
         </Stack>
         <div className={styles.messageButton}>
           <img src={message} alt="message" />

@@ -102,6 +102,7 @@ import ChatBody from "./components/chatbody";
 import ChatInput from "./components/chatinput";
 import ChatsNavBar from "./components/chatsnavbar";
 import Dialog from "./dialogs/dialog";
+import Divider from "../../components/Divider/Divider";
 
 // Dummy data for chats
 const chatList = [
@@ -308,6 +309,7 @@ const ChatsPage: React.FC = () => {
             </div>
           ))}
         </div>
+        <Divider />
 
         <div className={styles.chatHeader}>
           <Button className={styles.toggleButton} onClick={toggleCollapse}>
@@ -322,25 +324,29 @@ const ChatsPage: React.FC = () => {
         </div>
         <div className={styles.chatItems}>
           {chatList.map((chat) => (
-            <div
-              className={styles.chatItem}
-              key={chat.id}
-              onClick={() => handleChatClick(chat.id)}
-            >
-              <img src={iconUser} alt="" />
-              <div className={styles.chatItemContent}>
-                <div className={styles.chatItemTop}>
-                  <h5 className={styles.chatItemName}>{chat.name}</h5>
-                  <Button className={styles.chatItemOptions}>...</Button>
-                </div>
-                <div className={styles.chatItemBottom}>
-                  <p className={styles.chatItemTitle}>{chat.title}</p>
-                  <p className={styles.chatItemDate}>{chat.date}</p>
+            <>
+              {" "}
+              <div
+                className={styles.chatItem}
+                key={chat.id}
+                onClick={() => handleChatClick(chat.id)}
+              >
+                <img src={iconUser} alt="" />
+                <div className={styles.chatItemContent}>
+                  <div className={styles.chatItemTop}>
+                    <h5 className={styles.chatItemName}>{chat.name}</h5>
+                    <Button className={styles.chatItemOptions}>...</Button>
+                  </div>
+                  <div className={styles.chatItemBottom}>
+                    <p className={styles.chatItemTitle}>{chat.title}</p>
+                    <p className={styles.chatItemDate}>{chat.date}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </>
           ))}
         </div>
+        <Divider />
 
         <div className={styles.chatHeader}>
           <Button className={styles.toggleButton} onClick={toggleCollapse}>
@@ -355,23 +361,25 @@ const ChatsPage: React.FC = () => {
         </div>
         <div className={styles.chatItems}>
           {chatList.map((chat) => (
-            <div
-              className={styles.chatItem}
-              key={chat.id}
-              onClick={() => handleChatClick(chat.id)}
-            >
-              <img src={iconUser} alt="" />
-              <div className={styles.chatItemContent}>
-                <div className={styles.chatItemTop}>
-                  <h5 className={styles.chatItemName}>{chat.name}</h5>
-                  <Button className={styles.chatItemOptions}>...</Button>
-                </div>
-                <div className={styles.chatItemBottom}>
-                  <p className={styles.chatItemTitle}>{chat.title}</p>
-                  <p className={styles.chatItemDate}>{chat.date}</p>
+            <>
+              <div
+                className={styles.chatItem}
+                key={chat.id}
+                onClick={() => handleChatClick(chat.id)}
+              >
+                <img src={iconUser} alt="" />
+                <div className={styles.chatItemContent}>
+                  <div className={styles.chatItemTop}>
+                    <h5 className={styles.chatItemName}>{chat.name}</h5>
+                    <Button className={styles.chatItemOptions}>...</Button>
+                  </div>
+                  <div className={styles.chatItemBottom}>
+                    <p className={styles.chatItemTitle}>{chat.title}</p>
+                    <p className={styles.chatItemDate}>{chat.date}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </>
           ))}
         </div>
       </div>

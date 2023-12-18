@@ -7,6 +7,7 @@ import axios from "axios";
 import { CollectionItem, CollectionsList } from "./utils/collection";
 import { Outlet } from "react-router";
 import { useHeaderText } from "../Layout/HeaderContext";
+import WisdomUpload from "./WisdomUpload";
 
 const Wisdom = () => {
   const [page, setPage] = useState("1");
@@ -52,13 +53,18 @@ const Wisdom = () => {
 
   return (
     <div className={styles.wrapper}>
-      <NavBar pageClickHandle={pageClickHandle} />
-      {page === "1" && <Outlet /> ? (
-        <WisdomTable data={files}></WisdomTable>
+      {files ? (
+        <>
+          <NavBar pageClickHandle={pageClickHandle} />
+          {page === "1" ? (
+            <WisdomTable data={files} />
+          ) : (
+            <Collection collections={collections} />
+          )}
+        </>
       ) : (
-        <Collection collections={collections}></Collection>
+        <WisdomUpload />
       )}
-      <Outlet />
     </div>
   );
 };

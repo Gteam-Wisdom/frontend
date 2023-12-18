@@ -18,11 +18,13 @@
 }
 
 .me {
+  border-radius: 0 16px 16px 16px;
   position: relative;
   background: #F4EDF9;
 }
 
 .other {
+  border-radius: 0 16px 16px 16px;
   position: relative;
   background: #F4EDF9;
 }

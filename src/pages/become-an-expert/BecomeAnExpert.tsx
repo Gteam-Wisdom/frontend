@@ -60,26 +60,31 @@ function BecomeAnExpert() {
   const onSubmit = async () => {
     try {
       // Replace 'YOUR_API_ENDPOINT' with the actual endpoint
-      const apiEndpoint = "http://localhost:2999/auth/signup";
+      const apiEndpoint = "http://localhost:3000/auth/signup";
 
       // Perform POST request to the API endpoint with the data
       const response = await axios.post(apiEndpoint, data);
 
-      console.log("Response from server:", response);
-      if (!response.data.access_token) {
+      // Check if the response has the expected structure
+      if (response.data && response.data.access_token) {
+        // Save tokens to local and session storage
+        localStorage.setItem("refresh_token", response.data.refresh_token);
+        sessionStorage.setItem("access_token", response.data.access_token);
+
+        // Handle login or signup success
+        handleLoginOrSignupSuccess();
+      } else {
+        // Handle the case where the response does not have the expected structure
+        console.error("Unexpected response structure:", response);
         return;
       }
-
-      localStorageSet("refresh_token", response.data.refresh_token);
-      sessionStorageSet("access_token", response.data.access_token);
-      handleLoginOrSignupSuccess();
-
-      dispatch({ type: "SIGN_UP" });
-      navigate("/expert");
     } catch (error) {
       // Handle errors (e.g., show an error message)
       console.error("Error submitting data:", error);
+      return;
     }
+    dispatch({ type: "LOG_IN" });
+    navigate("/expert", { replace: true });
   };
 
   // useEffect(() => {

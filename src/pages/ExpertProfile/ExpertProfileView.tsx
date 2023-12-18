@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import Billing from "../../components/billing/Billing";
 import Settings from "../../components/personal-information/PersonalInformation";
 import PersonalInformation from "./components/PersonalInformation";
+import ExpertSettings from "./components/ExpertSettings";
 
 const ExpertProfileView = () => {
   const [page, setPage] = useState("1");
@@ -16,7 +17,7 @@ const ExpertProfileView = () => {
       ) : page === "2" ? (
         <Billing></Billing>
       ) : (
-        <Settings></Settings>
+        <ExpertSettings></ExpertSettings>
       )}
     </div>
   );

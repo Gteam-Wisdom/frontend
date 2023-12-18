@@ -17,7 +17,13 @@ const AvatarQuotes = () => {
         Message
       </Typography>
       <div className={styles.message}>
-        <Typography>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "start",
+            padding: "0 0 10px 0",
+          }}
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore
         </Typography>

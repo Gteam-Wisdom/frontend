@@ -13,6 +13,7 @@ import Help from "../pages/help-page/HelpPage";
 import { useState } from "react";
 import Dev from "../pages/dev/Dev";
 import ExpertProfileView from "../pages/ExpertProfile/ExpertProfileView";
+import DefaultCollectionView from "../pages/DefaultCollection/DefaultCollectionView";
 
 const PrivateRoutes = () => {
   const [role, setRole] = useState("expert");
@@ -22,17 +23,17 @@ const PrivateRoutes = () => {
         <Route path="wisdom" element={<Wisdom />}></Route>
         <Route index element={<HomePage />}></Route>
         <Route path="avatar" element={<Avatar />}></Route>
-        <Route path="default_collection" element={<CollectionView />}></Route>
         <Route path="profile" element={<ExpertProfileView />}></Route>
+        <Route path="default_collection" element={<DefaultCollectionView />} />
       </Route>
       <Route path="/learner" element={<Learner />}>
-        <Route index path="home" element={<HomePage />} />
+        <Route index element={<HomePage />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="chats" element={<Chats />} />
         <Route path="community" element={<Community />} />
         <Route path="profile" element={<Profile />} />
         <Route path="help" element={<Help />} />
-        <Route path="default_collection" element={<CollectionView />} />
+        <Route path="default_collection" element={<DefaultCollectionView />} />
       </Route>
       <Route path="/dev" element={<Dev />}></Route>
     </Routes>

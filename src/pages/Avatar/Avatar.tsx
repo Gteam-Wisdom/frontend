@@ -8,13 +8,21 @@ const Avatar = () => {
     setCreated(true);
   };
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       {created ? (
         <AvatarView></AvatarView>
       ) : (
         <AvatarForm onSubmit={handleSubmit} />
       )}
-    </>
+    </div>
   );
 };
 
