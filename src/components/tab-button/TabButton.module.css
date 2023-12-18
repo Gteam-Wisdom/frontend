@@ -1,0 +1,13 @@
+.tab {
+    margin: 0 1em;
+    box-sizing: content-box;
+    border-bottom: 1px solid transparent;
+}
+
+.tab button {
+    margin-bottom: 5px;
+}
+
+.tab.activeTab {
+    border-color: #222222;
+}

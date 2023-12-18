@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  max-width: 100vw;
+}
+  
+.main {
+  display: flex;
+  width: calc(100% - 88px);
+  padding: 28px 44px 0 44px;
+}
+
+.bg{
+    background: #F9F7FB;
+}

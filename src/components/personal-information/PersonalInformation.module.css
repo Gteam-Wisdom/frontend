@@ -1,0 +1,15 @@
+.personalInformation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    margin: 1em;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: start;
+}
+

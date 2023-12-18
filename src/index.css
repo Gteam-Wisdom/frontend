@@ -1,7 +1,5 @@
-/* Global styles */
-
 @import './reset.css';
-@import './assets/fonts/fonts.css';
+@import 'fonts/fonts.css';
 
 body {
   margin: 0;
@@ -13,9 +11,179 @@ body {
 
   --c-body: #F9F7FB;
   --c-accent-purple: #64108F;
+  --c-purple02: #8726B9;
 }
+
 a {
   text-decoration: none;
   color: inherit;
   outline: none;
 }
+
+/*.indexedStep {*/
+/*  color: rgb(190, 190, 190);*/
+/*  width: 30px;*/
+/*  height: 30px;*/
+/*  font-size: 12px;*/
+/*  background-color: #B23AEF;*/
+/*  border-radius: 50%;*/
+/*  border-style: solid;*/
+/*  border-width: 1px;*/
+/*  border-color: rgb(206, 206, 206);*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.indexedStep.accomplished {*/
+/*  background-color: #B23AEF;*/
+/*  color: white;*/
+/*  border-style: none;*/
+/*}*/
+
+.RSPBprogressBar {
+  height: 2px;
+  width: 90%;
+  line-height: 1;
+  border-radius: 10px;
+  position: relative;
+  background-color: #B23AEF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  margin: 4em auto;
+}
+
+.RSPBprogressBar .RSPBstep {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  transition-property: all;
+  transition-timing-function: ease;
+}
+
+.RSPBprogressBar .RSPBprogressBarText {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.css-b62m3t-container {
+  /*font-size: 16px;*/
+  /*font-weight: 400;*/
+  /*width: 100%;*/
+  /*color: #344054;*/
+  /*background: #ffffff;*/
+  border: 1px solid #D9D9EB;
+  padding: 0px 12px 0px 12px;
+  width: 100%;
+  border-radius: 12px;
+  /*min-height: 3em;*/
+  /*margin: 0.3em 0;*/
+
+  /*max-height: 48px !important;*/
+  /*margin: 0;*/
+  /*border: none !important;*/
+  /*padding: 0;*/
+  /*outline: none !important;*/
+}
+
+.css-1yvwecq-ValueContainer {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  border: none !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.css-1jqq78o-placeholder {
+  font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+
+}
+
+.css-tipsp-control {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.css-qbdosj-Input {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.css-gz0hkv-ValueContainer {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.css-13cymwt-control {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.css-13cymwt-control:focus {
+  max-height: 48px !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.css-1p3m7a8-multiValue {
+  background-color: #F1E8F8 !important;
+  border-radius: 1em !important;
+}
+
+.css-1hb7zxy-IndicatorsContainer {
+  display: none !important;
+}
+
+.css-swicq1-MultiValueGeneric {
+  background-color: #F1E8F8 !important;
+  border-radius: 1em !important;
+  padding: 4px 0  4px 12px !important;
+  font-family: Nunito;
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+
+.css-1w941pa-MultiValueRemove {
+  background-color: #F1E8F8 !important;
+  border-radius: 1em !important;
+  cursor: pointer;
+}
+
+.css-t3ipsp-control:hover {
+  border: none !important;
+}
+
+.css-5736gi-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/*<div class=" css-5736gi-menu"><div class=" css-1n6sfyn-MenuList" role="listbox" aria-multiselectable="true" id="react-select-3-listbox"><div class=" css-1wpc4j5-option" aria-disabled="false" id="react-select-3-option-0" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">1 / 6 selected</label></div><div class=" css-oqvjly-option" aria-disabled="false" id="react-select-3-option-1" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">Goranboy</label></div><div class=" css-1wbh7qj-option" aria-disabled="false" id="react-select-3-option-2" tabindex="-1" role="option"><input type="checkbox" checked=""><label style="margin-left: 5px;">Safikurd</label></div><div class=" css-oqvjly-option" aria-disabled="false" id="react-select-3-option-3" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">Baku</label></div><div class=" css-oqvjly-option" aria-disabled="false" id="react-select-3-option-4" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">Ganja</label></div><div class=" css-oqvjly-option" aria-disabled="false" id="react-select-3-option-5" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">Shusha</label></div><div class=" css-oqvjly-option" aria-disabled="false" id="react-select-3-option-6" tabindex="-1" role="option"><input type="checkbox"><label style="margin-left: 5px;">Agdam</label></div></div></div>*/

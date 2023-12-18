@@ -1,0 +1,40 @@
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1.5em 0;
+}
+
+select {
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    color: #344054;
+    background: #ffffff;
+    border: 1px solid #D9D9EB;
+    padding: 0px 12px 0px 12px;
+    border-radius: 12px;
+    min-height: 3em;
+    margin: 0.3em 0;
+    font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+
+    & option {
+        font-family: 'Nunito Sans';
+        font-size: 16px;
+        font-weight: 400;
+        color: #667085;
+    }
+}
+
+.label {
+    font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    margin: 0.3em 0;
+}
+
+.required {
+    color: #FC1A1A;
+}

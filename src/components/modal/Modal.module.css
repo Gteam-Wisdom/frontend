@@ -1,0 +1,9 @@
+.modal {
+    max-width: 530px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 0 22px #B4BFD159;
+}
+

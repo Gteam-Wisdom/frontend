@@ -1,0 +1,22 @@
+.tabs {
+    padding: 2em;
+}
+
+.tabsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.tabButtons {
+    display: flex;
+    align-items: center;
+}
+
+.saveButton {
+    padding: 0.5em 2.3em;
+    color: #6B6985;
+    border: 1px solid #6B6985;
+    border-radius: 10em;
+}

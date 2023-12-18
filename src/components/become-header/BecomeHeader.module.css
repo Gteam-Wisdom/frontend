@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #E4DEE7;
+    box-shadow: 0 4px 10px #B2A0BB26;
+    padding: 1em 2em;
+
+    & > p {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    & > div {
+        margin-right: 40px;
+        height: 40px;
+
+        & img {
+            height: 100%;
+            vertical-align: top;
+        }
+
+        & button {
+            height: 100% !important;
+            margin-right: 2em;
+        }
+    }
+
+}
+
+.logo {
+    font-family: Nunito, Calibri, Arial, sans-serif;
+    font-size: 24px;
+    margin-left: 4em;
+    font-weight: 600;
+}
+
+
+

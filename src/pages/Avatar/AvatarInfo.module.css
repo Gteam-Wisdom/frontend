@@ -1,0 +1,76 @@
+.wrapper{
+    border-radius: 16px;
+    border: 1px solid var(--Stroke, #D9D9EB);
+    background: #FFF;
+    box-shadow: 0px 0px 22px 0px rgba(180, 191, 209, 0.35);
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    flex-direction: column;
+    position: relative;
+}
+.infoSection{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.editAvatar{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.collectionsSection{ 
+    width: 100%;
+    height: fit-content;
+    align-items: flex-start;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.collections{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.collection{
+    display: flex;
+    max-width: 375.437px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    border-radius: 12px;
+    border: 1px solid var(--Stroke, #D9D9EB);
+    background: var(--White, #FCFCFD);
+}
+.tagsSection{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.collectionActions{ 
+    width: 100%;
+}
+.channels{
+    width: 100%;
+    align-items: flex-start;
+}
+.samples{
+    width: 100%;
+    align-items: flex-start;
+}

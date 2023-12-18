@@ -1,0 +1,19 @@
+.modalHeader {
+    margin: 1.5em 0;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.subtitle {
+    margin-top: 15px;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 400;
+    color: #6B6985;
+}

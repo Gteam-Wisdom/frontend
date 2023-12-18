@@ -1,0 +1,49 @@
+/* TopQuestions.module.css */
+  
+  .questionContent {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .answer {
+    background-color:  rgba(247, 241, 253, 1);
+
+  }
+  
+  .expanded {
+    padding: 10px;
+    height: auto !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: auto !important;
+    margin: 0px !important;
+    margin-top: 24px;
+    gap: 16px;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(252, 252, 253, 1);
+    box-shadow: 0px 0px 22px 0px rgba(180, 191, 209, 0.35);
+  }
+  
+  .questionsContainer {
+    max-height: 500px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 16px;
+  }
+  
+  .question {
+    border: 1px solid rgba(247, 241, 253, 1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background: rgba(247, 241, 253, 1);
+    overflow: hidden;
+    padding: 10px;
+    width: 100%; /* Take up the full width of the grid cell */
+  }
+    

@@ -1,0 +1,53 @@
+.headerTitle {
+    font-family: Nunito, Calibri, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 5.5em;
+    text-transform: capitalize;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    & button {
+      margin: 0 1em;
+    }
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    & p,
+    & i {
+        margin: 0 0.5em;
+    }
+}
+
+.arrow {
+    border: solid #321841;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    margin-right: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    margin-left: 3px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

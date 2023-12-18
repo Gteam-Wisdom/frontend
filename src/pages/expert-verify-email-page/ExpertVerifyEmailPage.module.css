@@ -1,0 +1,26 @@
+.radio {
+    padding: 14px 16px;
+    width: 158px;
+    height: 72px;
+    position: relative;
+    border: 1px solid #D9D9EB;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    color: #6B6985;
+    text-align: center;
+    line-height: 1.36em;
+    &.checked {
+        color: var(--c-purple02);
+        border-color: var(--c-purple02) !important;
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    column-gap: 12px;
+    margin: 32px 0;
+}

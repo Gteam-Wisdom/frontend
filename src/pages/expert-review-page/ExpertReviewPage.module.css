@@ -1,0 +1,86 @@
+.button {
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    color: #321841;
+    font-size: 20px;
+    background-color: #F6E3FF;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #F1E8F8;
+}
+
+.mediaLinksContainer {
+    margin: 1.5em 0;
+    max-height: 200px;
+    overflow-y: auto;
+    & li {
+        font-size: 16px;
+    }
+    & div {
+        margin: 0;
+    }
+}
+
+
+/* Add this to your stylesheet or style module */
+.flex-column-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flexColumnItem {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 8px; /* Adjust the spacing as needed */
+  }
+  
+  .flex-column-item img {
+    width: 24px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+    margin-right: 8px; /* Adjust the spacing as needed */
+  }
+  
+  .custom-link {
+    /* Add any custom styles for the link */
+    color: blue; /* Example color */
+    text-decoration: underline; /* Example text decoration */
+  }
+  
+  .sectionWithEdit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Adjust the spacing as needed */
+  }
+  
+  .sectionTitle {
+    margin-right: 8px; /* Adjust the spacing between the title and icon */
+  }
+  
+  .editIcon {
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+    /* Add any other styles for the edit icon */
+  }
+
+
+.section {
+font-family: Nunito;
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: start;
+}
+

@@ -1,0 +1,21 @@
+/* Divider.module.css */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex-grow: 1;
+}
+  
+.hr {
+    flex: 1;
+    border: none;
+    height: 2px;
+    background-color: #ccc;
+}
+  
+.divider-text {
+    margin: 0 10px;
+    color: #888;
+}
+  

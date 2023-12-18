@@ -1,0 +1,144 @@
+.chatsPage {
+  display: flex;
+  flex: 1 1;
+}
+
+.chatList {
+  max-width: 320px;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-bottom-right-radius: 2em;
+  border-top-right-radius: 2em;
+  color: #FCFCFD;
+  display: flex;
+  border: 1px solid #E8D8F1;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  padding: 10px 10px 10px 40px;
+  color: black;
+  margin-left: -30px;
+}
+
+.chatHeader {
+  /*margin: 2em 1em;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatsnavbarContainer {
+  position: absolute;
+  right: 10px;
+  top: 106px;
+}
+.chatSearch {
+  display: flex;
+  align-items: center;
+}
+
+.chatItems {
+  margin-bottom: 1em;
+}
+
+.chatItem {
+  display: flex;
+  align-items: center;
+  border-radius: 1em;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.chatItemContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 100%;
+  /*align-items: center;*/
+}
+
+.chatItemTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatItemName {
+  font-size: 14px;
+  color: #321841;
+}
+
+.chatItemOptions {
+
+}
+
+.chatItemTitle {
+  font-size: 12px;
+  color: #6B6985;
+}
+
+.chatItemDate {
+  font-size: 10px;
+  color: #321841;
+}
+
+.chatItemBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  color: #321841;
+  background-color: #F6E3FF;
+  font-size: 20px;
+  margin-left: 10px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #F1E8F8;
+}
+
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  & p,
+  & i {
+    margin: 0 0.5em;
+  }
+}
+
+.arrow {
+  border: solid #321841;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  margin-right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  margin-left: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}

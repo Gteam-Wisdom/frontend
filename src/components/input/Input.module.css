@@ -1,0 +1,99 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+    border: 0;
+}
+
+.labelContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input,
+textarea {
+    padding: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    color: #344054;
+    background: #ffffff;
+    border: 1px solid rgba(179, 177, 201, 1);
+    border-radius: 12px;
+    min-height: 3em;
+    margin: 0.5em 0;
+    font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+}
+
+.inputIcon{
+    padding-left: 50px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4d90fe;
+}
+
+textarea {
+    padding: 5px 12px 0px 12px;
+    min-height: 80px;
+}
+
+input::placeholder {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    font-weight: 400;
+    color: #667085;
+}
+
+.label,
+.helperMessage,
+.errorMessage {
+    font-family: 'Nunito Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    margin: 0.3em 0;
+}
+
+.errorMessage {
+    color: #FC1A1A;
+}
+
+.errorInput {
+    border: 1px solid #FC1A1A;
+}
+
+.required {
+    color: #FC1A1A;
+}
+
+.passwordContainer,
+.locationContainer {
+    width: 100%;
+    position: relative;
+}
+
+.passwordToggle,
+.findButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #333;
+    outline: none;
+}
+
+.passwordToggle {
+    right: 10px;
+}
+
+.findButton {
+    left: 10px;
+}

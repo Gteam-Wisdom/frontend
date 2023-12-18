@@ -1,0 +1,12 @@
+.button {
+  background-color: transparent!important;
+  border-radius: 32px!important;
+  border: none!important;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+}
+.button:hover {
+  border: 1px solid #64108F!important
+}

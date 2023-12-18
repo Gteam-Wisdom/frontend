@@ -1,0 +1,15 @@
+.button {
+    color: #321841;
+    font-family: Nunito;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.img{
+    fill: #321841;
+}

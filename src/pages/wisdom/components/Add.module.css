@@ -1,0 +1,19 @@
+.dialog{
+    border-radius: 16px;
+    overflow: hidden;
+    border: 0;
+}
+.border{
+    width: 100%;
+    height: 100%;
+    border: 1.5px dashed rgba(0, 107, 197, 1);
+    border-radius: 16px;
+}
+.dropArea{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

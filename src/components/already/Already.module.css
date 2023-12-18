@@ -1,0 +1,10 @@
+.already {
+    text-align: center;
+    margin-top: 32px;
+
+    & a {
+        cursor: pointer;
+        color: var(--c-accent-purple);
+        font-weight: 700;
+    }
+}

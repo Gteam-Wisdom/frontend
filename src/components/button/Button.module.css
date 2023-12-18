@@ -1,0 +1,46 @@
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-family: Nunito, Calibri, Arial, sans-serif;
+    transition: 0.2s;
+}
+
+.wide {
+    padding: 0.6em 4em;
+    border-radius: 10em;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.border {
+    color: #8419BB;
+    border-color: #8419BB !important;
+    border: 1px solid var(--c-accent-purple);
+}
+
+.long {
+    width: 100%;
+}
+
+.center {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accent {
+    background: var(--c-purple02);
+    color: white;
+}
+.fit {
+    padding: 16px;
+    width: fit-content;
+}
+.rounded {
+    border-radius: 10em;
+}

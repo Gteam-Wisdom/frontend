@@ -1,0 +1,39 @@
+.goalsOnboarding {
+    margin: 1.5em 0;
+}
+
+.goalsInputContainer {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+
+    & div {
+        width: 100%;
+        margin: 0 !important;
+    }
+}
+
+.button {
+    width: 53px;
+    height: 48px;
+    border-radius: 100%;
+    color: #8726B9;
+    font-size: 20px;
+    border: 1px solid #8726B9;
+    margin-left: 10px;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #F1E8F8;
+}
+
+.goalsList {
+    margin: 1.5em 0;
+    line-height: 1.5em;
+    max-height: 200px;
+    overflow-y: auto;
+    & li {
+        font-size: 16px;
+    }
+}

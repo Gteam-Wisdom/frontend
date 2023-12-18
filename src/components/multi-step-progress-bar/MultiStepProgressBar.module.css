@@ -1,0 +1,51 @@
+.indexedStep {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 2px;
+    border-color: #B23AEF;
+
+    & span {
+        position: absolute;
+        color: #B3B1C9;
+        top: 35px;
+        width: max-content;
+    }
+}
+
+.indexedStep.accomplished {
+    background-color: #B23AEF;
+    border-style: none;
+}
+
+.indexedStep.activeStep {
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-width: 2px;
+    border-color: #B23AEF;
+    position: relative;
+    box-sizing: content-box;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #B23AEF;
+        border-radius: 50%;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+.activeStep span,
+.accomplished span {
+    color: #321841 !important;
+}
