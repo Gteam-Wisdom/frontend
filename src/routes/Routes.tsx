@@ -12,7 +12,7 @@ import { useAuthWatchdog, useIsAuthenticated } from "../hooks/auth";
 const Routes = () => {
   const [loading, setLoading] = useState(false);
   const [refresh, setRefresh] = useState(0);
-  const isAuthenticated = true;
+  const isAuthenticated = useIsAuthenticated();
 
   const afterLogin = useCallback(() => {
     setRefresh((old) => old + 1); // Force re-render
