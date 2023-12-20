@@ -9,6 +9,7 @@ import ModalHeader from "../../components/modal-header/ModalHeader";
 import Buttons from "../../components/buttons/Buttons";
 
 import styles from "./ExpertEmailVerificationPage.module.css";
+import axios from "axios";
 
 interface ExpertEmailVerificationPageProps {
   currentPage?: number;
@@ -44,7 +45,7 @@ const ExpertEmailVerificationPage: React.FC<
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const errors = !code;
     setState((prevState) => ({
@@ -55,7 +56,21 @@ const ExpertEmailVerificationPage: React.FC<
       const nextPageIndex =
         currentPage < totalSteps ? currentPage + 1 : totalSteps;
       setCurrentPage(nextPageIndex);
-      return navigate("/become-an-expert/congrats");
+      try {
+        const response = await axios.post("http://localhost:3000/auth/verify", {
+          code: code,
+        });
+
+        if (response.data === true) {
+          // Code verification successful, navigate to the next screen
+          return navigate("/become-an-expert/congrats");
+        } else {
+          // Handle the case where verification fails
+          console.error("Verification failed");
+        }
+      } catch (error) {
+        console.error("Error during verification:", error);
+      }
     }
   };
 

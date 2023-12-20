@@ -7,6 +7,7 @@ import Layout from "../../components/layout/Layout";
 import MultiStepProgressBar from "../../components/multi-step-progress-bar/MultiStepProgressBar";
 import Already from "../../components/already/Already";
 import ModalHeader from "../../components/modal-header/ModalHeader";
+import axios from "axios";
 
 // import styles from './ExpertVerifyEmailPage.module.css';
 
@@ -43,23 +44,39 @@ const ExpertVerifyEmailPage: React.FC<ExpertVerifyEmailPageProps> = ({
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const errors = !email;
     setState((prevState) => ({
       ...prevState,
       errors,
     }));
-
     if (!errors) {
-      const nextPageIndex =
-        currentPage < totalSteps ? currentPage + 1 : totalSteps;
-      setCurrentPage(nextPageIndex);
-      addData({
-        email: state.email,
-        password: state.password,
-      });
-      return navigate("/become-an-expert/email-verification");
+      try {
+        // Send the email to the backend endpoint for further processing
+        const response = await axios.post("http://localhost:3000/auth/send", {
+          email: state.email,
+        });
+
+        if (response.status === 200) {
+          const nextPageIndex =
+            currentPage < totalSteps ? currentPage + 1 : totalSteps;
+          setCurrentPage(nextPageIndex);
+          addData({
+            email: state.email,
+            password: state.password,
+          });
+          return navigate("/become-an-expert/email-verification");
+          // If the request is successful, navigate to the email verification page
+        } else {
+          // Handle the case where the backend request is not successful
+          console.error("Error sending email:", response.data);
+        }
+      } catch (error) {
+        console.error("Error sending email:", error);
+      }
+    }
+    if (!errors) {
     }
   };
 

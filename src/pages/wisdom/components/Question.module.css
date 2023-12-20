@@ -1,0 +1,32 @@
+.wrapper {
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+    display: block;
+}
+.clue{
+    display: none;
+}
+.wrapper:hover > .clue{
+    position: absolute;
+    display: block;
+    background-color: #321841;
+    padding: 16px;
+    border-radius: 5px;
+    width: 250px;
+    left: 40px;
+    top: -20px;
+}
+
+.clue::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: solid 10px;
+    border-bottom: solid 10px transparent;
+    border-top: solid 10px transparent;
+
+    position: absolute;
+    left: -11px;
+    top: 10px;
+}
